@@ -1,0 +1,15 @@
+# One regex per line, matched against the GitHub login (case-insensitive
+# patterns should use the (?i) prefix). Lines starting with # are ignored.
+#
+# These are patterns that repeatedly showed up as noise when mining GitHub
+# for self-directed learners: automated digest bots, curated list accounts,
+# and lab/org handles that aren't individual people.
+
+(?i)daily.?arxiv
+(?i)arxiv.?daily
+(?i)^ai4[a-z]+$
+(?i)^cv-arxiv
+(?i)paper.?a.?day
+(?i)^awesome[-_]
+(?i)-?(lab|labs)$
+(?i)^lab[-_]

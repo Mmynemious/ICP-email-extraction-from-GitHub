@@ -1,0 +1,46 @@
+# Example query bank — a bioinformatics-learner ICP, as a worked example.
+#
+# The idea: combine a SUBFIELD/TOOL keyword with a LEARNER-SIGNAL phrase so
+# GitHub's code/repo search surfaces people who are *learning* the tool, not
+# the tool's own maintainers. Rotate these every round — the same 20 queries
+# mined twice will mostly return people you've already found.
+#
+# Copy this file to config/queries.yaml and edit it for your own ICP.
+# See README.md "Adapting this to a different ICP" for the walkthrough.
+
+categories:
+  tool_repos:
+    - 'language:"Jupyter Notebook" "scanpy" "single cell" tutorial in:readme'
+    - '"rosalind" bioinformatics solutions python in:readme'
+    - 'language:Python "biopython" "learning" in:readme'
+    - 'language:R "DESeq2" "learning" beginner in:readme'
+    - 'language:R "Seurat" "tutorial" "single cell" beginner in:readme'
+    - '"bioinformatics specialization" coursera notes'
+
+  portfolio_repos:
+    - '"bioinformatics" "portfolio" project in:name,readme'
+    - '"computational biology" "journey" in:name,readme'
+    - '"learning" "bioinformatics" "roadmap" in:name,readme'
+    - '"bioinformatics" "self study" in:name,readme'
+    - '"my bioinformatics" notes journey in:name,readme'
+
+  date_filtered_repos:
+    - 'bioinformatics "learning notes" created:>2025-01-01'
+    - '"single cell" learning notes created:>2025-01-01'
+    - '"rna-seq" tutorial beginner created:>2025-01-01 language:"Jupyter Notebook"'
+
+# User-bio search: matches people whose GitHub bio text signals self-directed
+# learning in the space (not just people who happen to use the tools).
+user_bio_queries:
+  - '"aspiring bioinformatician" in:bio'
+  - '"learning bioinformatics" in:bio'
+  - '"self-taught" "biology" in:bio'
+  - '"computational biology" "student" in:bio'
+
+# Stargazer mining: people who starred a well-known intro/tutorial repo in
+# your field are near-certainly learners in that field. Pick 3-6 canonical
+# "getting started" repos for your niche.
+stargazer_repos:
+  - "ossu/bioinformatics"
+  - "danielecook/Awesome-Bioinformatics"
+  - "hbctraining/scRNA-seq_online"
